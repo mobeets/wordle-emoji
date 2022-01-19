@@ -25,7 +25,7 @@ function paste() {
 
 	let newText = textToReplace;
 	if (gray.length > 0) {
-		newText = newText.replace(/⬜/g, gray);
+		newText = newText.replace(/⬜/g, gray).replace(/⬛/g, gray);
 	}
 	if (yellow.length > 0) {
 		newText = newText.replace(/🟨/g, yellow);
