@@ -23,7 +23,17 @@ function paste() {
 		originalText = textToReplace;
 	}
 
-	const newText = textToReplace.replace(/⬜/g, gray).replace(/🟨/g, yellow).replace(/🟩/g, green);
+	let newText = textToReplace;
+	if (gray.length > 0) {
+		newText = newText.replace(/⬜/g, gray);
+	}
+	if (yellow.length > 0) {
+		newText = newText.replace(/🟨/g, yellow);
+	}
+	if (green.length > 0) {
+		newText = newText.replace(/🟩/g, green);
+	}
+	// .replace(/⬜/g, gray).replace(/🟨/g, yellow).replace(/🟩/g, green);
 	element.val(newText);
 	copyToClipboard(newText);
 	$('#output').html('Results have been copied to clipboard.');
